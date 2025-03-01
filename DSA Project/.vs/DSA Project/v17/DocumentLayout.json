@@ -5,6 +5,26 @@
     {
       "AbsoluteMoniker": "D:0:0:{227D3AF6-FC25-4F14-84DE-73F1F225C914}|DSA Project\\DSA Project.csproj|d:\\mesith\\documents\\github\\dsa-project\\dsa project\\dsa project\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{227D3AF6-FC25-4F14-84DE-73F1F225C914}|DSA Project\\DSA Project.csproj|solutionrelative:dsa project\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{227D3AF6-FC25-4F14-84DE-73F1F225C914}|DSA Project\\DSA Project.csproj|d:\\mesith\\documents\\github\\dsa-project\\dsa project\\dsa project\\shoppingcart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{227D3AF6-FC25-4F14-84DE-73F1F225C914}|DSA Project\\DSA Project.csproj|solutionrelative:dsa project\\shoppingcart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{227D3AF6-FC25-4F14-84DE-73F1F225C914}|DSA Project\\DSA Project.csproj|d:\\mesith\\documents\\github\\dsa-project\\dsa project\\dsa project\\sortingandsearching.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{227D3AF6-FC25-4F14-84DE-73F1F225C914}|DSA Project\\DSA Project.csproj|solutionrelative:dsa project\\sortingandsearching.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{227D3AF6-FC25-4F14-84DE-73F1F225C914}|DSA Project\\DSA Project.csproj|d:\\mesith\\documents\\github\\dsa-project\\dsa project\\dsa project\\orderqueue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{227D3AF6-FC25-4F14-84DE-73F1F225C914}|DSA Project\\DSA Project.csproj|solutionrelative:dsa project\\orderqueue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{227D3AF6-FC25-4F14-84DE-73F1F225C914}|DSA Project\\DSA Project.csproj|d:\\mesith\\documents\\github\\dsa-project\\dsa project\\dsa project\\productmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{227D3AF6-FC25-4F14-84DE-73F1F225C914}|DSA Project\\DSA Project.csproj|solutionrelative:dsa project\\productmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{227D3AF6-FC25-4F14-84DE-73F1F225C914}|DSA Project\\DSA Project.csproj|d:\\mesith\\documents\\github\\dsa-project\\dsa project\\dsa project\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{227D3AF6-FC25-4F14-84DE-73F1F225C914}|DSA Project\\DSA Project.csproj|solutionrelative:dsa project\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,8 +34,73 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 5,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SortingAndSearching.cs",
+              "DocumentMoniker": "D:\\Mesith\\Documents\\GitHub\\DSA-Project\\DSA Project\\DSA Project\\SortingAndSearching.cs",
+              "RelativeDocumentMoniker": "DSA Project\\SortingAndSearching.cs",
+              "ToolTip": "D:\\Mesith\\Documents\\GitHub\\DSA-Project\\DSA Project\\DSA Project\\SortingAndSearching.cs",
+              "RelativeToolTip": "DSA Project\\SortingAndSearching.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAmwDEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-22T15:41:03.535Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "OrderQueue.cs",
+              "DocumentMoniker": "D:\\Mesith\\Documents\\GitHub\\DSA-Project\\DSA Project\\DSA Project\\OrderQueue.cs",
+              "RelativeDocumentMoniker": "DSA Project\\OrderQueue.cs",
+              "ToolTip": "D:\\Mesith\\Documents\\GitHub\\DSA-Project\\DSA Project\\DSA Project\\OrderQueue.cs",
+              "RelativeToolTip": "DSA Project\\OrderQueue.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAcwDgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-22T15:32:07.969Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ShoppingCart.cs",
+              "DocumentMoniker": "D:\\Mesith\\Documents\\GitHub\\DSA-Project\\DSA Project\\DSA Project\\ShoppingCart.cs",
+              "RelativeDocumentMoniker": "DSA Project\\ShoppingCart.cs",
+              "ToolTip": "D:\\Mesith\\Documents\\GitHub\\DSA-Project\\DSA Project\\DSA Project\\ShoppingCart.cs",
+              "RelativeToolTip": "DSA Project\\ShoppingCart.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAuwDYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-22T15:13:51.374Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ProductManager.cs",
+              "DocumentMoniker": "D:\\Mesith\\Documents\\GitHub\\DSA-Project\\DSA Project\\DSA Project\\ProductManager.cs",
+              "RelativeDocumentMoniker": "DSA Project\\ProductManager.cs",
+              "ToolTip": "D:\\Mesith\\Documents\\GitHub\\DSA-Project\\DSA Project\\DSA Project\\ProductManager.cs",
+              "RelativeToolTip": "DSA Project\\ProductManager.cs",
+              "ViewState": "AgIAADkAAAAAAAAAAAAmwF4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-22T15:08:58.64Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Product.cs",
+              "DocumentMoniker": "D:\\Mesith\\Documents\\GitHub\\DSA-Project\\DSA Project\\DSA Project\\Product.cs",
+              "RelativeDocumentMoniker": "DSA Project\\Product.cs",
+              "ToolTip": "D:\\Mesith\\Documents\\GitHub\\DSA-Project\\DSA Project\\DSA Project\\Product.cs",
+              "RelativeToolTip": "DSA Project\\Product.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-22T15:04:46.466Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -24,7 +109,7 @@
               "RelativeDocumentMoniker": "DSA Project\\Program.cs",
               "ToolTip": "D:\\Mesith\\Documents\\GitHub\\DSA-Project\\DSA Project\\DSA Project\\Program.cs",
               "RelativeToolTip": "DSA Project\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-27T04:45:11.66Z",
               "EditorCaption": ""
