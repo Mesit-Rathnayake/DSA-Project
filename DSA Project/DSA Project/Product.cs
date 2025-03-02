@@ -18,14 +18,13 @@ namespace DSA_Project
         public void DisplayProducts()
         {
             Console.WriteLine($"\n Product: {Name}");
-            Console.WriteLine($" Price: {Price:C}");
+            Console.WriteLine($" Price: Rs. {Price}");
             Console.WriteLine($" Stock: {Stock}\n");
         }
 
-        // Override ToString() for better object printing
         public override string ToString()
         {
-            return $"{Name} -  {Price:C} -  {Stock} in stock";
+            return $"{Name} - Rs. {Price} - {Stock} in stock";
         }
     }
 }

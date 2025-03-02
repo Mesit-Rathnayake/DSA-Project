@@ -12,7 +12,7 @@ class Program
 
         while (true)
         {
-            Console.WriteLine("1. Add Product to Catalog");
+            Console.WriteLine("\n1. Add Product to Inventory");
             Console.WriteLine("2. Display Products");
             Console.WriteLine("3. Add Product to Cart");
             Console.WriteLine("4. Display Cart");
@@ -38,14 +38,22 @@ class Program
                     break;
 
                 case 3:
-                    Console.Write("Enter product name to add to cart: ");
-                    string productName = Console.ReadLine();
+                    Console.Write("Enter amount and product name (e.g., '50 Apples'): ");
+                    string input = Console.ReadLine();
+                    string[] parts = input.Split(' ', 2);
+
+                    if (parts.Length < 2 || !int.TryParse(parts[0], out int quantity) || quantity <= 0)
+                    {
+                        Console.WriteLine("Invalid input. Use format: '50 Apples'");
+                        break;
+                    }
+
+                    string productName = parts[1];
                     Product product = productManager.GetProduct(productName);
 
                     if (product != null)
                     {
-                        cart.AddToCart(product);
-                        Console.WriteLine($"{product.Name} added to cart.");
+                        cart.AddToCart(product, quantity);
                     }
                     else
                     {
@@ -54,15 +62,14 @@ class Program
                     break;
 
                 case 4:
-                    Console.WriteLine("Displaying Cart:");
                     cart.DisplayCart();
                     break;
 
                 case 5:
-                    Console.WriteLine("Place Order: ");
-                    foreach (var item in cart.CartItems())
+                    Console.WriteLine("Placing Order...");
+                    foreach (var (productItem, qty) in cart.CartItems())
                     {
-                        orderQueue.Enqueue(item);
+                        orderQueue.Enqueue(productItem, qty);
                     }
                     cart.ClearCart();
                     break;
@@ -73,7 +80,7 @@ class Program
                     break;
 
                 case 7:
-                    return; // Exit the program
+                    return;
             }
         }
     }

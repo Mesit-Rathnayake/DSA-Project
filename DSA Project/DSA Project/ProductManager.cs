@@ -20,6 +20,18 @@ namespace DSA_Project
 
         public void AddProduct(Product product)
         {
+            Node temp = head;
+            while (temp != null)
+            {
+                if (temp.Data.Name.Equals(product.Name, StringComparison.OrdinalIgnoreCase))
+                {
+                    temp.Data.Stock += product.Stock; // Update stock if product exists
+                    Console.WriteLine($"Updated stock for {product.Name}: {temp.Data.Stock}");
+                    return;
+                }
+                temp = temp.Next;
+            }
+
             Node newNode = new Node(product);
             if (head == null)
             {
@@ -27,7 +39,7 @@ namespace DSA_Project
             }
             else
             {
-                Node temp = head;
+                temp = head;
                 while (temp.Next != null)
                 {
                     temp = temp.Next;
@@ -40,11 +52,11 @@ namespace DSA_Project
         {
             if (head == null)
             {
-                Console.WriteLine("\n No products available.");
+                Console.WriteLine("\nNo products available.");
                 return;
             }
 
-            Console.WriteLine("\n Available Products:");
+            Console.WriteLine("\nAvailable Products:");
             Node temp = head;
             while (temp != null)
             {
@@ -67,7 +79,6 @@ namespace DSA_Project
             return null;
         }
 
-        // 🆕 Allow users to add products dynamically
         public void AddProductFromUser()
         {
             Console.Write("Enter product name: ");
@@ -88,7 +99,7 @@ namespace DSA_Project
             }
 
             AddProduct(new Product(name, price, stock));
-            Console.WriteLine($"✅ {name} added successfully!\n");
+            Console.WriteLine($"{name} added successfully!\n");
         }
     }
 }
