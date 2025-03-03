@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 
 namespace DSA_Project
 {
@@ -44,16 +45,16 @@ namespace DSA_Project
                 }
 
                 double totalAmount = 0;
+                CultureInfo lkrCulture = new CultureInfo("en-LK"); // Sri Lankan currency format
 
                 while (front != null)
                 {
-                    // Check if there's enough stock to fulfill the order
                     if (front.OrderProduct.Stock >= front.Quantity)
                     {
-                        front.OrderProduct.Stock -= front.Quantity; // Reduce stock
+                        front.OrderProduct.Stock -= front.Quantity;
                         double orderCost = front.OrderProduct.Price * front.Quantity;
                         totalAmount += orderCost;
-                        Console.WriteLine($"Processed: {front.Quantity} x {front.OrderProduct.Name} | Cost: {orderCost:C} | Remaining Stock: {front.OrderProduct.Stock}");
+                        Console.WriteLine($"Processed: {front.Quantity} x {front.OrderProduct.Name} | Cost: {orderCost.ToString("C", lkrCulture)} | Remaining Stock: {front.OrderProduct.Stock}");
                     }
                     else
                     {
@@ -63,8 +64,8 @@ namespace DSA_Project
                     front = front.Next;
                 }
 
-                rear = null; // Queue is empty now
-                Console.WriteLine($"\nTotal Order Amount: {totalAmount:C}");
+                rear = null;
+                Console.WriteLine($"\nTotal Order Amount: {totalAmount.ToString("C", lkrCulture)}");
             }
 
             internal void Enqueue((Product, int) item)
