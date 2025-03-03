@@ -14,17 +14,18 @@ class Program
         {
             Console.WriteLine("\n1. Add Product to Inventory");
             Console.WriteLine("2. Display Products");
-            Console.WriteLine("3. Add Product to Cart");
-            Console.WriteLine("4. Display Cart");
-            Console.WriteLine("5. Place Order");
-            Console.WriteLine("6. Process Order");
-            Console.WriteLine("7. Delete Product from Inventory");
-            Console.WriteLine("8. Exit");
+            Console.WriteLine("3. Sort Products by Price");
+            Console.WriteLine("4. Add Product to Cart");
+            Console.WriteLine("5. Display Cart");
+            Console.WriteLine("6. Place Order");
+            Console.WriteLine("7. Process Order");
+            Console.WriteLine("8. Delete Product from Inventory");
+            Console.WriteLine("9. Exit");
             Console.Write("Enter your choice: ");
 
 
             int choice;
-            while (!int.TryParse(Console.ReadLine(), out choice) || choice < 1 || choice > 8)
+            while (!int.TryParse(Console.ReadLine(), out choice) || choice < 1 || choice > 9)
             {
                 Console.Write("Invalid choice. Please enter a number between 1 and 8: ");
             }
@@ -38,8 +39,11 @@ class Program
                 case 2:
                     productManager.DisplayProducts();
                     break;
-
                 case 3:
+                    productManager.SortProductsByPrice();
+                    break;
+
+                case 4:
                     Console.Write("Enter amount and product name (e.g., '50 Apples'): ");
                     string input = Console.ReadLine();
                     string[] parts = input.Split(' ', 2);
@@ -63,11 +67,11 @@ class Program
                     }
                     break;
 
-                case 4:
+                case 5:
                     cart.DisplayCart();
                     break;
 
-                case 5:
+                case 6:
                     Console.WriteLine("Placing Order...");
                     foreach (var (productItem, qty) in cart.CartItems())
                     {
@@ -76,19 +80,20 @@ class Program
                     cart.ClearCart();
                     break;
 
-                case 6:
+                case 7:
                     Console.WriteLine("Processing Order...");
                     orderQueue.ProcessOrder();
                     break;
 
-                case 7: // New option to delete a product
+                case 8: // New option to delete a product
                     Console.Write("Enter the name of the product to delete: ");
                     string productToDelete = Console.ReadLine();
                     productManager.DeleteProduct(productToDelete);
                     break;
 
-                case 8:
+                case 9:
                     return;
+
             }
         }
     }

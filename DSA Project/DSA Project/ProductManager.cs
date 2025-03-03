@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace DSA_Project
 {
@@ -155,6 +156,12 @@ namespace DSA_Project
         }
         public void DeleteProduct(string productName)
         {
+            if (string.IsNullOrWhiteSpace(productName))
+            {
+                Console.WriteLine("Product name cannot be empty.");
+                return;
+            }
+
             if (head == null)
             {
                 Console.WriteLine("No products to delete.");
@@ -166,6 +173,7 @@ namespace DSA_Project
             {
                 head = head.Next;
                 Console.WriteLine($"{productName} has been deleted from the inventory.");
+                SaveProductsToCSV(); // Save after deletion
                 return;
             }
 
@@ -177,6 +185,7 @@ namespace DSA_Project
                 {
                     temp.Next = temp.Next.Next;
                     Console.WriteLine($"{productName} has been deleted from the inventory.");
+                    SaveProductsToCSV(); // Save after deletion
                     return;
                 }
                 temp = temp.Next;
@@ -185,5 +194,191 @@ namespace DSA_Project
             // If the product is not found
             Console.WriteLine($"{productName} not found in inventory.");
         }
+
+        //MergeSort
+        /*
+        public void SortProductsByPrice()
+        {
+            if (head == null)
+            {
+                Console.WriteLine("No products to sort.");
+                return;
+            }
+
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
+
+            // Convert linked list to a List
+            List<Product> productList = new List<Product>();
+            Node temp = head;
+            while (temp != null)
+            {
+                productList.Add(temp.Data);
+                temp = temp.Next;
+            }
+
+            // Apply MergeSort
+            MergeSort(productList);
+
+            // Rebuild the linked list
+            head = null;
+            foreach (var product in productList)
+            {
+                AddProduct(product); // Reuse the AddProduct method to insert them back
+            }
+
+            stopwatch.Stop();
+            Console.WriteLine($"Products sorted by price using MergeSort in {stopwatch.ElapsedMilliseconds} ms.");
+        }
+
+        private void MergeSort(List<Product> productList)
+        {
+            if (productList.Count <= 1)
+                return;
+
+            int mid = productList.Count / 2;
+            List<Product> left = productList.Take(mid).ToList();
+            List<Product> right = productList.Skip(mid).ToList();
+
+            MergeSort(left);
+            MergeSort(right);
+
+            Merge(productList, left, right);
+        }
+
+        private void Merge(List<Product> productList, List<Product> left, List<Product> right)
+        {
+            int i = 0, j = 0, k = 0;
+
+            while (i < left.Count && j < right.Count)
+            {
+                if (left[i].Price <= right[j].Price)
+                {
+                    productList[k++] = left[i++];
+                }
+                else
+                {
+                    productList[k++] = right[j++];
+                }
+            }
+
+            while (i < left.Count)
+            {
+                productList[k++] = left[i++];
+            }
+
+            while (j < right.Count)
+            {
+                productList[k++] = right[j++];
+            }
+        }*/
+
+
+        //QuickSort
+        public void SortProductsByPrice()
+        {
+            if (head == null)
+            {
+                Console.WriteLine("No products to sort.");
+                return;
+            }
+
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
+
+            // Convert linked list to a List
+            List<Product> productList = new List<Product>();
+            Node temp = head;
+            while (temp != null)
+            {
+                productList.Add(temp.Data);
+                temp = temp.Next;
+            }
+
+            // Apply QuickSort
+            QuickSort(productList, 0, productList.Count - 1);
+
+            // Rebuild the linked list
+            head = null;
+            foreach (var product in productList)
+            {
+                AddProduct(product); // Reuse the AddProduct method to insert them back
+            }
+
+            stopwatch.Stop();
+            Console.WriteLine($"Products sorted by price using QuickSort in {stopwatch.ElapsedMilliseconds} ms.");
+        }
+
+        private void QuickSort(List<Product> productList, int low, int high)
+        {
+            if (low < high)
+            {
+                int pi = Partition(productList, low, high);
+
+                QuickSort(productList, low, pi - 1);  // Sort left
+                QuickSort(productList, pi + 1, high); // Sort right
+            }
+        }
+
+        private int Partition(List<Product> productList, int low, int high)
+        {
+            Product pivot = productList[high];
+            int i = (low - 1);
+
+            for (int j = low; j < high; j++)
+            {
+                if (productList[j].Price < pivot.Price)
+                {
+                    i++;
+                    Swap(productList, i, j);
+                }
+            }
+            Swap(productList, i + 1, high);
+            return i + 1;
+        }
+
+        private void Swap(List<Product> productList, int i, int j)
+        {
+            var temp = productList[i];
+            productList[i] = productList[j];
+            productList[j] = temp;
+        }
+
+        //BubbleSort
+
+        /*
+        public void SortProductsByPrice()
+        {
+            if (head == null)
+            {
+                Console.WriteLine("No products to sort.");
+                return;
+            }
+
+            Stopwatch stopwatch = new Stopwatch(); // Create a stopwatch to measure time
+            stopwatch.Start(); // Start the stopwatch
+
+            // Convert linked list to a List
+            List<Product> productList = new List<Product>();
+            Node temp = head;
+            while (temp != null)
+            {
+                productList.Add(temp.Data);
+                temp = temp.Next;
+            }
+
+            // Sort by price
+            var sortedProducts = productList.OrderBy(p => p.Price).ToList();
+
+            // Rebuild the linked list
+            head = null;
+            foreach (var product in sortedProducts)
+            {
+                AddProduct(product); // Reuse the AddProduct method to insert them back
+            }
+
+            stopwatch.Stop(); // Stop the stopwatch after sorting is complete
+            Console.WriteLine($"Products sorted by price in {stopwatch.ElapsedMilliseconds} ms.");
+        }*/
     }
 }
