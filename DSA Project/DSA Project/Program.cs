@@ -26,7 +26,7 @@ class Program
             int choice;
             while (!int.TryParse(Console.ReadLine(), out choice) || choice < 1 || choice > 8)
             {
-                Console.Write("Invalid choice. Please enter a number between 1 and 7: ");
+                Console.Write("Invalid choice. Please enter a number between 1 and 8: ");
             }
 
             switch (choice)
