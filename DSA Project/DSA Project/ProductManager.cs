@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.Collections.Generic;
 
 namespace DSA_Project
 {
@@ -17,6 +19,13 @@ namespace DSA_Project
     public class ProductManager
     {
         private Node head;
+        private const string CSV_FILE_PATH = "products_inventory.csv"; // File path for CSV
+
+        public ProductManager()
+        {
+            // Load products from CSV when the program starts
+            LoadProductsFromCSV();
+        }
 
         public void AddProduct(Product product)
         {
@@ -84,7 +93,7 @@ namespace DSA_Project
             Console.Write("Enter product name: ");
             string name = Console.ReadLine();
 
-            Console.Write("Enter product price: ");
+            Console.Write("Enter product price (in Rs): ");
             double price;
             while (!double.TryParse(Console.ReadLine(), out price) || price <= 0)
             {
@@ -100,6 +109,49 @@ namespace DSA_Project
 
             AddProduct(new Product(name, price, stock));
             Console.WriteLine($"{name} added successfully!\n");
+
+            // Save products to CSV after adding a new one
+            SaveProductsToCSV();
+        }
+
+        // Method to load products from CSV file
+        private void LoadProductsFromCSV()
+        {
+            if (File.Exists(CSV_FILE_PATH))
+            {
+                string[] lines = File.ReadAllLines(CSV_FILE_PATH);
+                foreach (var line in lines)
+                {
+                    var data = line.Split(',');
+                    if (data.Length == 3)
+                    {
+                        string name = data[0];
+                        double price = double.Parse(data[1]);
+                        int stock = int.Parse(data[2]);
+                        AddProduct(new Product(name, price, stock));
+                    }
+                }
+                Console.WriteLine("Products loaded from CSV.");
+            }
+            else
+            {
+                Console.WriteLine("No CSV file found. Starting with an empty inventory.");
+            }
+        }
+
+        // Method to save products to CSV file
+        private void SaveProductsToCSV()
+        {
+            using (StreamWriter sw = new StreamWriter(CSV_FILE_PATH))
+            {
+                Node temp = head;
+                while (temp != null)
+                {
+                    sw.WriteLine($"{temp.Data.Name},{temp.Data.Price},{temp.Data.Stock}");
+                    temp = temp.Next;
+                }
+            }
+            Console.WriteLine("Products saved to CSV.");
         }
     }
 }
