@@ -18,8 +18,10 @@ class Program
             Console.WriteLine("4. Display Cart");
             Console.WriteLine("5. Place Order");
             Console.WriteLine("6. Process Order");
-            Console.WriteLine("7. Exit");
+            Console.WriteLine("7. Delete Product from Inventory");
+            Console.WriteLine("8. Exit");
             Console.Write("Enter your choice: ");
+
 
             int choice;
             while (!int.TryParse(Console.ReadLine(), out choice) || choice < 1 || choice > 7)
@@ -79,7 +81,13 @@ class Program
                     orderQueue.ProcessOrder();
                     break;
 
-                case 7:
+                case 7: // New option to delete a product
+                    Console.Write("Enter the name of the product to delete: ");
+                    string productToDelete = Console.ReadLine();
+                    productManager.DeleteProduct(productToDelete);
+                    break;
+
+                case 8:
                     return;
             }
         }

@@ -66,6 +66,11 @@ namespace DSA_Project
                 rear = null; // Queue is empty now
                 Console.WriteLine($"\nTotal Order Amount: {totalAmount:C}");
             }
+
+            internal void Enqueue((Product, int) item)
+            {
+                throw new NotImplementedException();
+            }
         }
     }
 }

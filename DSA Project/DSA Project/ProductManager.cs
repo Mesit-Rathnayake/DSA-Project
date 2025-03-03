@@ -153,5 +153,37 @@ namespace DSA_Project
             }
             Console.WriteLine("Products saved to CSV.");
         }
+        public void DeleteProduct(string productName)
+        {
+            if (head == null)
+            {
+                Console.WriteLine("No products to delete.");
+                return;
+            }
+
+            // If the product to be deleted is the head node
+            if (head.Data.Name.Equals(productName, StringComparison.OrdinalIgnoreCase))
+            {
+                head = head.Next;
+                Console.WriteLine($"{productName} has been deleted from the inventory.");
+                return;
+            }
+
+            // Search for the product in the list
+            Node temp = head;
+            while (temp.Next != null)
+            {
+                if (temp.Next.Data.Name.Equals(productName, StringComparison.OrdinalIgnoreCase))
+                {
+                    temp.Next = temp.Next.Next;
+                    Console.WriteLine($"{productName} has been deleted from the inventory.");
+                    return;
+                }
+                temp = temp.Next;
+            }
+
+            // If the product is not found
+            Console.WriteLine($"{productName} not found in inventory.");
+        }
     }
 }
